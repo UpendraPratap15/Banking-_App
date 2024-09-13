@@ -1,0 +1,47 @@
+<html xmlns:th="http://www.thymeleaf.org">
+ <head>
+    <style>
+     a{
+     	text-decoration:underline !important;
+     	font-size:1.6vw;
+     }
+    </style> 
+  	<link th:href="@{/CSS/style.css}" rel="stylesheet">
+	<link th:href="@{/CSS/bootstrap.min.css}" rel="stylesheet">
+ </head>
+ <body  onload="makeActive('list')">
+  <div class='dvv'>
+   <label class='lah' style="color:blue">Transaction Summary</label>
+  </div> 
+  <div class='container'>
+    <div class='card col-md-12 mx-auto' style='border:3px solid silver'>
+  	  <div class='card-body'>
+  	   <div class='table scrollit'>
+  	    <table class='table table-hover'>
+  	     <thead>
+  	      <tr>
+  	      	<th>S.No</th><th>Account No</th><th>Date</th>
+  	      	<th>Time</th><th>Amount</th><th>Type</th>
+  	      </tr>
+  	     </thead>
+  	     <tbody>
+  	       <tr th:each="tr,i:${tlist}">
+			<td th:text="${i.count}"></td>	 
+  	        <td th:text="${tr.accountno}"></td>
+  	        <td th:text="${tr.date}"></td>
+  	        <td th:text="${tr.time}"></td>
+  	        <td th:text="${tr.amount}"></td>
+  	        <td th:if="${tr.type=='credit'}" style="color:green" th:text="${tr.type}"></td>
+  	        <td th:if="${tr.type=='debit'}" style="color:red" th:text="${tr.type}"></td>
+  	       </tr>
+	     </tbody> 
+  	    </table>
+  	   </div> 	
+  	  </div>
+  	</div>
+  </div>
+  <div style="text-align: center;margin-top: 1vw">
+	  <input type="button" class="btn btn-secondary" value="Home" onclick="history.back()">
+  </div>
+ </body>
+</html>

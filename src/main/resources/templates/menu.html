@@ -1,0 +1,37 @@
+<html xmlns:th="http://www.thymeleaf.org">
+ <head>
+  <link th:href='@{/CSS/style.css}' rel='stylesheet'>
+  <link th:href='@{/CSS/style1.css}' rel='stylesheet'>
+  <link th:href='@{/CSS/bootstrap.min.css}' rel='stylesheet'>
+  <script th:src='@{/JS/script.js}'></script>
+ </head>
+ <body>
+<img th:src="@{/images/bank.jpg}" style='height:28%;width:100%'>
+<hr style='border:1px solid red'>
+<table style="width:90%;margin:auto">
+  <tr>
+   <td align='center'><span class='na'>Account holder name:</span>
+    	<span style='font-size:1.7vw' th:text="${session.name}"></span>
+   </td>
+   <td align='center'><span class='na'>Account number:</span>
+      <span id="userAccountNo" style='font-size:1.7vw' th:text="${session.accountno}"></span>
+    </td>
+  </tr>
+</table>
+<input type="hidden" id="san" value="<%=an%>">
+<hr style='border:1px solid red'>
+<hr style='border:2px solid blue'>
+<table class='tamn' border='1'>
+ <tr>
+  <td align='center'><a id='home' class='mna' href='/mybank'>Home</a></td>
+  <td align='center'><a id='balance' class='mna' href='/mybank/activity/view-balance'>Show Balance</a></td>
+  <td align='center'><a id='deposit' class='mna' href='/mybank/activity/deposit-form'>Deposit Money</a></td>
+  <td align='center'><a id='withdraw' class='mna' href='/mybank/activity/withdraw-form'>Withdraw Money</a></td>
+  <td align='center'><a id='transfer' class='mna' href='/mybank/activity/accountno-form'>Transfer Money</a></td>
+  <td align='center'><a class='mna' href='/mybank/activity/transaction-summary'>View Transaction</a></td>
+  <td align='center'><a class='mna' href='/mybank/logout'>Logout</a></td>
+ </tr>
+</table>
+<hr style='border:2px solid blue'>
+</body>
+</html>

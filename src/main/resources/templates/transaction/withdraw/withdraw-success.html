@@ -1,0 +1,42 @@
+<html xmlns:th="http://www.thymeleaf.org">
+ <body onload="makeActive('withdraw')">
+ <div th:insert="csslink"></div>
+ <div class='dvv'>
+   <label class='lah' style="color:green;text-decoration:underline;">Withdraw Money Success</label>
+   <a href="/mybank" style="font-size:2vw;text-decoration: underline;margin-left:1vw">HOME</a>
+  </div>  
+ <table style="margin:auto;margin-top:2vw;border-collapse: collapse;font-size:1.8vw;width:45%" border="1" cellpadding="5px">
+	 <tr style="background-color:coral;color:white">
+		<th colspan="2" style="text-align: center;">Transaction Details</th>
+	 </tr>
+	 <tr>
+		 <th align="left">Transaction id</th>
+		 <td th:text="${transaction.trid}"></td>
+	 </tr>
+	 <tr>
+		 <th align="left">Name</th>
+		 <td th:text="${session.name}"></td>
+	 </tr>
+	 <tr>
+		 <th align="left">Account no</th>
+		 <td th:text="${session.accountno}"></td>
+	 </tr>
+	 <tr>
+		 <th align="left">Amount</th>
+		 <td style="color:red" th:text="${'&#8377;'+transaction.amount}"></td>
+	 </tr>
+	 <tr>
+		 <th align="left">Type</th>
+		 <td style="color:red" th:text="${transaction.type}"></td>
+	 </tr>
+	 <tr>
+		 <th align="left">Date</th>
+		 <td th:text="${transaction.date}"></td>
+	 </tr>
+	 <tr>
+		 <th align="left">Time</th>
+		 <td th:text="${transaction.time}"></td>
+	 </tr>
+ </table>
+ </body>
+</html>
